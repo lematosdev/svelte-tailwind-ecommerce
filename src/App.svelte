@@ -1,24 +1,25 @@
 <script lang="ts">
+  import { onMount } from 'svelte';
   import Header from './lib/Header.svelte';
   import Card from './lib/Card.svelte';
-  import { search, products } from './stores';
+  import { products, filteredProducts } from './stores';
 
-  $: {
-    products.init();
-    products.filter();
-  }
+  onMount(async () => {
+    const res = await fetch(
+      'http://fakestoreapi.com/products'
+    );
+    const data = await res.json();
+    $products = data;
+  });
 </script>
 
 <div>
   <Header />
-  {$search}
   <main>
     <div class="grid md:grid-cols-3 sm:grid-cols-2">
-      {#if products}
-        {#each $products as product}
-          <Card {product} />
-        {/each}
-      {/if}
+      {#each $filteredProducts as product}
+        <Card {product} />
+      {/each}
     </div>
     <p>
       Visit the <a href="https://svelte.dev/tutorial"

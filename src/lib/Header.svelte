@@ -1,7 +1,5 @@
 <script lang="ts">
   import { search } from '../stores';
-  let val = '';
-  search.set(val);
 </script>
 
 <nav class="bg-indigo-500 py-2 md:py-4">
@@ -35,7 +33,7 @@
           type="text"
           placeholder="Buscar"
           class="px-3 py-3 relative rounded-lg border-0 pl-10"
-          bind:value={val}
+          bind:value={$search}
         />
       </div>
     </div>
