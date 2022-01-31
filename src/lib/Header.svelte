@@ -3,15 +3,21 @@
 </script>
 
 <nav class="bg-indigo-500 py-2 md:py-4">
-  <div class="flex flex-row justify-between">
-    <div class="container flex flex-row">
+  <div class="flex justify-between items-center">
+    <div class="flex items-center">
       <h1
-        class="font-bold text-xl text-white pl-3 pr-6 whitespace-nowrap flex items-center"
+        class="font-bold text-xl text-white pl-3 pr-6 whitespace-nowrap flex items-center w-auto hidden sm:block"
       >
         SIMPLE eCommerce
       </h1>
-
-      <div class="flex relative items-stretch">
+      <img
+        class="sm:hidden w-16"
+        alt="LOGO"
+        src="https://www.designfreelogoonline.com/wp-content/uploads/2016/07/000749-online-store-logos-design-free-online-E-commerce-cart-logo-maker-02.png"
+      />
+      <div
+        class="flex relative items-stretch h-10 sm:h-12"
+      >
         <span
           class="z-10 h-full absolute flex items-center justify-center w-10 py-3"
           ><svg
@@ -32,12 +38,14 @@
         <input
           type="text"
           placeholder="Buscar"
-          class="px-3 py-3 relative rounded-lg border-0 pl-10"
+          class="px-3 py-3 relative rounded-lg border-0 pl-10 w-full"
           bind:value={$search}
         />
       </div>
     </div>
-    <div class="flex flex-row items-center">
+    <div
+      class="flex flex-row items-center sm:block hidden"
+    >
       <h1 class="text-xl px-2 text-white">CART</h1>
     </div>
   </div>

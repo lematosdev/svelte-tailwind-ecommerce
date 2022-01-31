@@ -17,7 +17,7 @@
     </div>
     <div>
       <p
-        class="h-32 text-lg text-left text-ellipsis overflow-hidden relative"
+        class="h-32 text-lg text-left text-ellipsis overflow-auto relative"
       >
         {product.description}
       </p>
