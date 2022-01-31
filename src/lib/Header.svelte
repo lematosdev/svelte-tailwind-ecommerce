@@ -10,11 +10,21 @@
       >
         SIMPLE eCommerce
       </h1>
-      <img
-        class="sm:hidden w-16"
-        alt="LOGO"
-        src="https://www.designfreelogoonline.com/wp-content/uploads/2016/07/000749-online-store-logos-design-free-online-E-commerce-cart-logo-maker-02.png"
-      />
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        class="w-12 mx-4 sm:hidden"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke="white"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"
+        />
+      </svg>
+
       <div class="flex relative h-10 sm:h-12">
         <span
           class="z-10 h-full absolute flex items-center justify-center w-10 py-3"
