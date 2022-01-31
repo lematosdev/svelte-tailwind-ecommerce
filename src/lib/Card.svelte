@@ -36,12 +36,12 @@
           >
             ${product.price}
           </div>
-          <div
+          <button
             on:click={handleAddToCart}
-            class="bg-indigo-500 rounded-full flex items-center h-8"
+            class="bg-indigo-500 rounded-full flex items-center h-8 hover:bg-indigo-700"
           >
             <span
-              class="flex items-center justify-center pt-1 bg-indigo-500 rounded-full w-10"
+              class="flex items-center justify-center pt-1 rounded-full w-10"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -54,11 +54,12 @@
                 />
               </svg>
             </span>
-            <button
+            <p
               class="text-sm pr-4 py-1 font-bold text-white border-none"
-              >ADD</button
             >
-          </div>
+              ADD
+            </p>
+          </button>
         </div>
       </div>
     </div>
