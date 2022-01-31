@@ -25,7 +25,7 @@
         />
       </svg>
 
-      <div class="flex relative h-10 sm:h-12">
+      <div class="flex relative h-10">
         <span
           class="z-10 h-full absolute flex items-center justify-center w-10 py-3"
           ><svg
