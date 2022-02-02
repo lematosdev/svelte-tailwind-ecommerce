@@ -2,7 +2,6 @@
   import { onMount } from 'svelte';
   import Header from './lib/Header.svelte';
   import Card from './lib/Card.svelte';
-  import Cart from './lib/Cart.svelte';
   import { products, filteredProducts } from './stores';
 
   onMount(async () => {
