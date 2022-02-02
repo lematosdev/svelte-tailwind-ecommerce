@@ -15,7 +15,7 @@
 {#if $toggleDropdown}
   <div
     transition:scale
-    class="absolute bg-white right-2 w-96 py-3 px-5 z-50 rounded-lg shadow-lg"
+    class="absolute bg-white right-2 w-72 sm:w-96 py-3 px-5 z-50 rounded-lg shadow-lg"
   >
     <div class="overflow-y-auto max-h-52">
       {#each $cart as cartItem}
