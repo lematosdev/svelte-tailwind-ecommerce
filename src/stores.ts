@@ -4,6 +4,7 @@ import type { Product } from './types';
 export const search = writable('');
 export const products = writable<Product[]>([]);
 export const cart = writable<Product[]>([]);
+export const toggleDropdown = writable(false);
 
 export const filteredProducts = derived(
   [products, search],

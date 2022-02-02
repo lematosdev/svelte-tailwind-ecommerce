@@ -2,6 +2,7 @@
   import { onMount } from 'svelte';
   import Header from './lib/Header.svelte';
   import Card from './lib/Card.svelte';
+  import Cart from './lib/Cart.svelte';
   import { products, filteredProducts } from './stores';
 
   onMount(async () => {
@@ -16,7 +17,9 @@
 <div>
   <Header />
   <main>
-    <div class="grid md:grid-cols-3 sm:grid-cols-1 grid-cols-1">
+    <div
+      class="grid md:grid-cols-3 sm:grid-cols-1 grid-cols-1"
+    >
       {#each $filteredProducts as product}
         <Card {product} />
       {/each}
