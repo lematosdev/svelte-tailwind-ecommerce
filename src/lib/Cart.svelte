@@ -1,12 +1,10 @@
 <script lang="ts">
-  import { fly } from 'svelte/transition';
-  import { cart, toggleDropdown } from '../stores';
-  const total =
-    Math.round(
-      ($cart.reduce((acc, cur) => acc + cur.total, 0) +
-        Number.EPSILON) *
-        100
-    ) / 100;
+  import { scale } from 'svelte/transition';
+  import {
+    cart,
+    toggleDropdown,
+    totalAmount
+  } from '../stores';
 
   const clearCart = () => {
     cart.set([]);
@@ -16,27 +14,31 @@
 
 {#if $toggleDropdown}
   <div
-    transition:fly
-    class="absolute bg-white right-2 w-52 p-2 z-50 overflow-y-auto max-h-52 rounded-lg shadow-lg"
+    transition:scale
+    class="absolute bg-white right-2 w-96 py-3 px-5 z-50 rounded-lg shadow-lg"
   >
-    {#each $cart as cartItem}
-      <div
-        class="border-b-indigo-700 border-b-2 flex mb-3 py-1"
-      >
-        <h1 class="truncate">{cartItem.title}</h1>
-        <p
-          class="border-2 border-gray-300 rounded-xl text-center w-14"
+    <div class="overflow-y-auto max-h-52">
+      {#each $cart as cartItem}
+        <div
+          class="border-b-indigo-700 border-b-2 flex justify-between mb-3 py-1"
         >
-          {cartItem.quantity}
-        </p>
-      </div>
-    {/each}
-    <div class="flex justify-between">
-      <button class="bottom-0" on:click={clearCart}
-        >Clear Cart</button
+          <h1 class="truncate">{cartItem.title}</h1>
+          <p
+            class="border-2 border-gray-300 rounded-xl text-center min-w-[12%]"
+          >
+            {cartItem.quantity}
+          </p>
+        </div>
+      {/each}
+    </div>
+
+    <div class="flex justify-between items-center">
+      <button
+        class="bg-indigo-500 rounded-full flex items-center hover:bg-indigo-700 text-white text-sm font-bold p-2"
+        on:click={clearCart}>CLEAR CART</button
       >
       <p>
-        Total: ${total}
+        Total: ${$totalAmount}
       </p>
     </div>
   </div>
