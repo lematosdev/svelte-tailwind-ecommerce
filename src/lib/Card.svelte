@@ -1,14 +1,33 @@
 <script lang="ts">
+  import { fade } from 'svelte/transition';
   import type { Product } from '../types';
   import { cart } from '../stores';
   export let product: Product;
 
   const handleAddToCart = (): void => {
-    $cart = [...$cart, product];
+    cart.update((p) => {
+      if (p.find((item) => item.id === product.id)) {
+        return p.map((item) => {
+          if (item.id === product.id) {
+            return {
+              ...item,
+              quantity: item.quantity + 1,
+              total: item.total + item.price
+            };
+          }
+          return item;
+        });
+      }
+      return [
+        ...p,
+        { ...product, quantity: 1, total: product.price }
+      ];
+    });
   };
 </script>
 
 <div
+  transition:fade|local
   class="border-indigo-500 border-4 rounded-lg flex flex-col m-2"
 >
   <p
