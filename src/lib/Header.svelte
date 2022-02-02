@@ -7,7 +7,7 @@
   <div class="flex justify-between items-center">
     <div class="flex items-center">
       <h1
-        class="font-bold text-xl text-white pl-3 pr-6 whitespace-nowrap flex items-center w-auto hidden sm:block"
+        class="font-bold text-xl text-white pl-3 pr-6 whitespace-nowrap items-center w-auto hidden sm:block"
       >
         SIMPLE eCommerce
       </h1>
@@ -54,7 +54,7 @@
     </div>
     <div class="relative">
       <button
-        class="px-2 mx-2 flex items-center"
+        class="px-2 mx-2 flex items-center rounded-xl hover:bg-indigo-700 active:bg-indigo-400"
         on:click={() =>
           ($toggleDropdown = !$toggleDropdown)}
       >
@@ -73,7 +73,10 @@
           />
         </svg>
         <p class="text-3xl px-2 text-white">
-          {$cart.length}
+          {$cart.reduce(
+            (acc, item) => acc + item.quantity,
+            0
+          )}
         </p>
       </button>
       <Cart />
