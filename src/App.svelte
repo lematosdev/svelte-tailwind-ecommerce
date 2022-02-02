@@ -6,7 +6,7 @@
 
   onMount(async () => {
     const res = await fetch(
-      'http://fakestoreapi.com/products'
+      'https://fakestoreapi.com/products'
     );
     const data = await res.json();
     $products = data;
